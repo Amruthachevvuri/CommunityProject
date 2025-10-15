@@ -1,0 +1,114 @@
+{
+  "name": "Item",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Item name/title"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "textbook",
+        "notebook",
+        "uniform",
+        "lab_record",
+        "bag",
+        "stationery",
+        "equipment",
+        "other"
+      ],
+      "description": "Type of educational material"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the item"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "like_new",
+        "good",
+        "fair",
+        "acceptable"
+      ],
+      "description": "Physical condition of the item"
+    },
+    "class_grade": {
+      "type": "string",
+      "description": "Class/grade level this item is for"
+    },
+    "stream": {
+      "type": "string",
+      "description": "Academic stream (Science, Commerce, Arts)"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject name if applicable"
+    },
+    "academic_year": {
+      "type": "string",
+      "description": "Academic year (e.g., 2023-24)"
+    },
+    "institution": {
+      "type": "string",
+      "description": "School/College name"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of photo URLs"
+    },
+    "pricing_type": {
+      "type": "string",
+      "enum": [
+        "free",
+        "exchange",
+        "sell"
+      ],
+      "description": "How the item is being offered"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price if selling (0 for free)"
+    },
+    "exchange_preference": {
+      "type": "string",
+      "description": "What user wants in exchange"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "pending",
+        "completed",
+        "removed"
+      ],
+      "default": "available",
+      "description": "Current status of the item"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether admin has approved this listing"
+    },
+    "views": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of views"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the item"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "condition",
+    "pricing_type"
+  ]
+}

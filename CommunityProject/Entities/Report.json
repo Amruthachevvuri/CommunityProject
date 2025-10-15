@@ -1,0 +1,52 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "reporter_email": {
+      "type": "string",
+      "description": "Email of user who reported"
+    },
+    "reported_item_id": {
+      "type": "string",
+      "description": "ID of reported item if applicable"
+    },
+    "reported_user_email": {
+      "type": "string",
+      "description": "Email of reported user if applicable"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "inappropriate_content",
+        "spam",
+        "fraud",
+        "harassment",
+        "other"
+      ],
+      "description": "Reason for report"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the issue"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "resolved",
+        "dismissed"
+      ],
+      "default": "pending",
+      "description": "Current status of the report"
+    },
+    "admin_notes": {
+      "type": "string",
+      "description": "Admin notes on the report"
+    }
+  },
+  "required": [
+    "reporter_email",
+    "reason"
+  ]
+}

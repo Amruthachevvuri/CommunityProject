@@ -1,0 +1,57 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "ID of the item"
+    },
+    "donor_email": {
+      "type": "string",
+      "description": "Email of donor/seller"
+    },
+    "receiver_email": {
+      "type": "string",
+      "description": "Email of receiver/buyer"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "donation",
+        "exchange",
+        "sale"
+      ],
+      "description": "Type of transaction"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Transaction amount if sale"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "initiated",
+        "accepted",
+        "completed",
+        "cancelled"
+      ],
+      "default": "initiated",
+      "description": "Transaction status"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When transaction was completed"
+    },
+    "co2_saved": {
+      "type": "number",
+      "description": "Estimated CO2 saved in kg"
+    }
+  },
+  "required": [
+    "item_id",
+    "donor_email",
+    "receiver_email",
+    "transaction_type"
+  ]
+}

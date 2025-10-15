@@ -1,0 +1,42 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "Unique ID for the conversation thread"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email of message sender"
+    },
+    "receiver_email": {
+      "type": "string",
+      "description": "Email of message receiver"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "Related item ID if applicable"
+    },
+    "message": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether message has been read"
+    },
+    "flagged": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether admin has flagged this message"
+    }
+  },
+  "required": [
+    "conversation_id",
+    "sender_email",
+    "receiver_email",
+    "message"
+  ]
+}
